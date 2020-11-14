@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
-\title{The Importance of Elasticity in a Computing Cluster}
+\title{Scale-up or scale-out: Is there one solution that fits all problem sizes?}
 \date{}
 \author{Marcel Stolin \\ marcelstolin@gmail.com}
 
@@ -21,43 +21,81 @@ Since the beginning of Big Data, batch processing was the most popular choice fo
 % ###############################
 % ==============================
 \section{Introduction} \label{s_intro}
+% Why is scaling needed (Moores Law + More powerful resources)
+A slowdown in Moore`s did not happen in recent years. With the increase of interest in Artificial Intelligence and the growing complexity of modern computing architectures, more powerful resources are needed to adapt to business needs. The cost of running computing environments grows with the capacity of its computing resources.
+% Introduction to scaling (horizontal and vertical)
+The cloud computing architecture has contributed to the elasticity of modern computing environments. Cloud computing makes it easy to increase the computing capacity of a computing environment on demand \cite{Mahmood2013CloudConcepts}. Scaling computing environments can be achieved through horizontal and vertical scaling. For the horizontal scaling strategy, increasing the computing capacity is called scaling-out, in vertical scaling it is called scaling-up \cite{Abbott2015ScalabilityArt}.
+% Whats the problem (Adding resources or deploying components)
+Although both strategies can be used to increase the computation capacity of an IT environment, each strategy follows a different approach.
+
+
+% What is this essay about
+The contribution of this essay is as follows. First, the two scaling strategies are introduced while mentioning examples. Second, the differences between both scaling strategies and their typical use-cases are described. Third, a summary of this essay is given with a logical conclusion.
 
 
 % ==============================
 % ###############################
 % ==============================
-\section{Related Work} \label{s_related}
+\section{State of the art}
+There are many research studies around scalability of IT environments and different use-cases for horizontal and vertical scaling. Rossi et al. \cite{Rossi2019HorAndVert} created a solution to control the horizontal and vertical elasticity of container-based applications using Reinforcement learning  WHATS THE RESULT. 
 
 
 % ==============================
 % ###############################
 % ==============================
-\section{Elasticity} \label{s_batch}
+\section{Background}
 
-\begin{figure}[h!]
-  \includegraphics[width=\linewidth]{images/mapreduce.jpg}
-  \caption{Pseudo code of counting the number of occurrences of each word in a large selection of documents.}
-  \label{fig:mapreduce}
-\end{figure}
+This section provides information about the scale-up and scale-out strategies.
+
+\subsection{Scale-up}
+% Explain
+In vertical scaling, replacing an IT resource with another with higher capacity is called scaling-up \cite{Mahmood2013CloudConcepts}. By adding more powerful resources to a component, a component can take more throughput and perform more specialized tasks \cite{Abbott2015ScalabilityArt}.
+% How can it be achieved
+In a cloud environment, scaling-up is typically achieved by replacing a VM (Virtual Machine) with a more powerful VM \cite{Mahmood2013CloudConcepts}.
+
+
+% Example
+
+\subsection{Scale-out}
+% Explain
+Scale-out refers to horizontal scaling by cloning instances of a service or data in an IT environment. By cloning instances, the work can be distributed across instances to handle an increasing number of requests. A new clone is able to perform the same work and will respond as other clones.
+% How can it be achieved
+In cloud computing, instances are typically deployed using container technologies. Cloning containers is easy due to their lightweight architecture \cite{Abbott2015ScalabilityArt}.
+
+
+% Example
+A typical example for using a scale-out strategy is, to create new instances of a database to serve read-operations for rapidly increasing requests.
 
 
 % ==============================
 % ###############################
 % ==============================
-\section{Design} \label{s_stream}
+\section{Scale-up or scale-out}
+% The case
+If an IT environment reaches the limitations of its hardware capacity, options are to scale-up the environment by adding more powerful resources or scale-out to distribute the work across multiple instances. If an IT environment is not designed to scale-out, the only option remaining is to add more powerful hardware \cite{Abbot2011ScalabilityRules}.
+% Scaling-up
+Scaling-up by adding more powerful hardware to the IT environment, is limited by maximum hardware capacity and causes downtimes due to IT resource replacements \cite{Mahmood2013CloudConcepts}. An economical threshold can be reached, where buying more powerful hardware is too expensive. Another limitation can be that no more powerful hardware is available by the provider \cite{Abbot2011ScalabilityRules}.
+% Scaling-out
+If the environment is designed to scale-out, buying more powerful resources is not needed. The computing capacity can be increased by adding more instances which are typically not limited \cite{Abbot2011ScalabilityRules}. In this case, the scaling-out strategy gives an IT environment the flexibility to scale without increasing the cost.
+
+
+% Summary
+In a cloud environment, scaling-up is less considered by architects due to its significant drawbacks. A scaling-up operation is limited by maximum hardware capacity and downtimes caused by IT resource replacements \cite{Mahmood2013CloudConcepts}. While on the other hand, scaling-out in an IT environment is not limited and can be done on-demand with modern container technologies \cite{Abbot2011ScalabilityRules}. In general, IT environments should be designed to scale-out in the first place.  While the cost of buying more powerful hardware grows proportionally, the cost of investing engineering power to design an environment to scale-out grows linear \cite{Abbot2011ScalabilityRules}. 
 
 
 % ==============================
 % ###############################
 % ==============================
-\section{Conclusion}\label{s_concl}
+\section{Conclusion}
+The ability to scale is an important characteristic of modern and complex IT environments. With the ability to scale, an IT environment is able to adapt to business needs. Scaling-up and scaling-out are two scaling approaches to increase the computing capacity of an IT environment. While scaling-up seems to be the logical solution to increase the computing capacity at the first place, it comes with significant disadvantages according to cost and flexibility. A modern IT environment should be designed to scale-out in the first place to handle performance spikes and keep the cost low.
 
-This paper explains the two data analysis concepts batch processing and stream processing. Since realtime analysis is needed to face the issues of today's demands, batch processing is still being used for legacy implementations and data analysis where no efficient algorithms are known. Stream processing offers new opportunities to handle big data and response with an immediate result to the user.
+ES SOLLTE NOCH WAS ÜBER: WENN LIMIT ERREICHT MIT HORIZONTAL -> VERTICAL IST IMMERNOCH NE MÖGLICHKEIT
 
 
 % ==============================
 % ###############################
 % ==============================
+\pagebreak
 \bibliographystyle{plain}
 \bibliography{mybib}
 
