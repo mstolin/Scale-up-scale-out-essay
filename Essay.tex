@@ -13,7 +13,7 @@
 
 
 \begin{abstract}
-The scalability of a computing environment impacts the performance and the ability to serve business needs. Two approaches to scale a computing environment are scale-up and scale-out. The objective of this essay is to describe the scale-up and scale-out approaches while mentioning their limitations. In addition, this essay describes why a computing environment should be designed to scale-out in the first place to safe costs.
+The scalability of a computing environment impacts the performance and the ability to serve business needs. Two approaches to scale a computing environment are scale-up and scale-out. The objective of this essay is to describe the scale-up and scale-out approaches while mentioning their limitations. In addition, this essay describes why a computing environment should be designed to scale-out in the first place to save costs.
 \end{abstract}
 
 
@@ -22,15 +22,15 @@ The scalability of a computing environment impacts the performance and the abili
 % ==============================
 \section{Introduction} \label{s_intro}
 % Why is scaling needed (Moores Law + More powerful resources)
-With the increase of interest in Artificial Intelligence and the growing complexity of modern computing architectures, more powerful resources are needed to adapt to business needs. If an IT environment reaches the limit of its computational power and can`t serve incoming requests efficiently, it has reached the limit of its scalability \cite{Wilder2012CloudPatterns}. The limit of scalability can be extended by providing more resources. Although, increasing the resources also increases the cost of running the environment.
+With the increase of interest in Artificial Intelligence and the growing complexity of modern computing architectures, more powerful resources are needed to adapt to business needs. If a computing environment has reached the limits of its computational power and can`t serve the requests of its concurrent users efficiently, it has reached the limit of its scalability \cite{Wilder2012CloudPatterns}. The limit of scalability can be extended by providing more resources. Although, increasing the resources also increases the cost of running the environment.
 % Introduction to scaling (horizontal and vertical)
 The two primary approaches to increase the capacity of a computing environment are vertical scaling-up and horizontal scaling-out \cite{Abbott2015ScalabilityArt}. Both approaches are not exclusive and a computing environment can be designed to scale vertically, horizontally or both \cite{Wilder2012CloudPatterns}.
 % Whats the problem (Adding resources or deploying components)
-Although both strategies can be used to increase the capacity of a computing environment, each strategy follows a different approach.
+Although both strategies can be used to increase the capacity of a computing environment, each strategy follows a different approach. Choosing the right scaling approach in the first place is beneficial to  scale according to business needs and saving costs.
 
 
 % What is this essay about
-The contribution of this essay is as follows. First, the approach of each scaling strategy is introduced. Second, based on a use case, the limitations of both scaling approaches are described, while mentioning the best approach to solve the problem. Third, a summary of this essay is given with a logical conclusion.
+The contribution of this essay is as follows. First, the approach of each scaling strategy is introduced. Second, the limitations of both scaling approaches are described. Third, a recommended scaling strategy is introduced. Lastly, a summary of this essay is given with a logical conclusion.
 
 
 % ==============================
@@ -45,12 +45,12 @@ This section introduces the concept of the scaling-up and scaling-out approaches
 Scale-up refers to improving the hardware of individual nodes \cite{Wilder2012CloudPatterns}. By adding more powerful resources to a node, a node can take more throughput and perform more specialized tasks \cite{Abbott2015ScalabilityArt}.
 % How can it be achieved
 An increase of the computing capacity of a node can include adding memory or adding more CPU cores \cite{Wilder2012CloudPatterns}.
-Due to the low complexity of scaling-up, it is the most applied scaling approach \cite{Wilder2012CloudPatterns}.
+Due to the low complexity of scaling-up, it is the easiest scaling approach \cite{Wilder2012CloudPatterns}.
 
 
 \subsection{Scale-out}
 % Explain
-Scaling-out is achieved by adding more nodes to the computing environment \cite{Wilder2012CloudPatterns}. Adding more nodes, increases the overall computing capacity of the environment and in addition, the workload can be distributed across all nodes to handle and increasing number of requests \cite{Wilder2012CloudPatterns, Abbott2015ScalabilityArt}.
+Scaling-out is achieved by adding more nodes to the computing environment \cite{Wilder2012CloudPatterns}. Adding more nodes increases the overall computing capacity of the environment and in addition, the workload can be distributed across all nodes to handle and increasing number of concurrent users \cite{Wilder2012CloudPatterns, Abbott2015ScalabilityArt}.
 % Homegenereous
 To scale efficiently, nodes should be homogeneous. Homogeneous nodes are able to perform the same work and will respond as other nodes \cite{Abbott2015ScalabilityArt}.
 
@@ -69,7 +69,7 @@ This section describes the limitations of both scaling approaches.
 
 \paragraph{}
 % Overall limitations
-Overall, scalability is limited by the resource capacity it is able to provide to each active user \cite{Wilder2012CloudPatterns}.
+Overall, scalability is limited by the resource capacity it is able to provide to each concurrent user \cite{Wilder2012CloudPatterns}.
 % The case
 If a computing environment reaches the limitations of its hardware capacity, options are to scale-up by adding more powerful resources or to scale-out to distribute the work across multiple nodes. If a computing environment is not designed to scale-out, the only option remaining is to add more powerful hardware \cite{Abbot2011ScalabilityRules}.
 
@@ -89,10 +89,13 @@ Designing an environment to scale-out, shifts the focus from infrastructure to d
 
 \section{Recommended scaling-strategy}
 \paragraph{}
-In this section, a reasonable recommendation of how to scale a computing environment is given.
+In this section, a reasonable recommendation of a scaling strategy for a computing environment is given.
 
 
 \paragraph{}
+% In general
+In general, choosing the right scaling approach should be a business related decision. The goal is to improve the performance experience of each concurrent user.
+% The recommendation
 Although, scaling-up is the simpler scaling approach due to its low complexity, it has significant drawbacks compared to scaling-out. In general, computing environments should be designed to scale-out in the first place. 
 % Hardware limitations of scaling-up
 If a computing environment is designed to scale-up, it is possible that no more powerful hardware is available. In addition, more powerful can become unaffordable.
@@ -112,7 +115,7 @@ The ability to scale is a critical characteristic of modern and complex computin
 % ==============================
 % ###############################
 % ==============================
-\pagebreak
+%\pagebreak
 \bibliographystyle{plain}
 \bibliography{sources}
 
